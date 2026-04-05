@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Gerkariah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* ⭐ STARS BACKGROUND */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* 🌐 MAIN CONTENT */
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile {
+            margin-bottom: 30px;
+        }
+
+        .profile h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .profile p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link {
+            text-decoration: none;
+            color: white;
+            background: #334155;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .link:hover {
+            background: #475569;
+            transform: scale(1.04);
+        }
+
+        .link small {
+            display: block;
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 480px) {
+            .profile h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ⭐ Stars -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+
+        <div class="profile">
+            <h1>SHINE GERKARIAH</h1>
+            <p>Builder • Creator • Designer ✨</p>
+        </div>
+
+        <div class="links">
+
+            <a class="link" href="https://bit.ly/4uSCIPd" target="_blank">
+                🚀 Sign Up for AWS Builder
+                <small>(Using this helps me reach my ambassador goal ✨)</small>
+            </a>
+
+            <a class="link" href="https://www.instagram.com/gerkariah/" target="_blank">
+                📸 Instagram — @gerkariah
+            </a>
+
+            <a class="link" href="https://builder.aws.com/community/@shineshine?tab=badges" target="_blank">
+                🎨 SHINE Designs AWS Articles✨
+            </a>
+
+            <a class="link" href="https://www.linkedin.com/in/gerkariah/">
+                💼 LinkedIn - @ Shine Gerkariah
+            </a>
+
+        </div>
+
+        <div class="footer">
+            Built by Shine ✨
+        </div>
+
+    </div>
+
+    <!-- ⭐ Star Generator -->
+    <script>
+        const starsContainer = document.getElementById('stars');
+
+        const colors = ['#ffffff', '#fef08a', '#a5f3fc', '#fbcfe8'];
+
+        for (let i = 0; i < 90; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+
+            starsContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+
+</html>
