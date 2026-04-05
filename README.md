@@ -13,7 +13,6 @@ It’s designed to be **mobile-friendly**, aesthetic, and includes a cute **star
   - SHINE Designs
   - LinkedIn 
 
-## How to Use
-1. Clone or download this repository:
+## Shine's Site
 ```bash
-git clone https://github.com/yourusername/links.git
+LINK: https://gerkariah.github.io/links/
